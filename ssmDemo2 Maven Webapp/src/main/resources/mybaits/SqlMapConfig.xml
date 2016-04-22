@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<!-- settings全局变量的设置 -->
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+	
+	<!-- 别名的定义 -->
+	<typeAliases>
+		<!-- <typeAlias type="com.ls.model.User" alias="user"/> -->
+		<package name="com.ls.po"/>
+	</typeAliases>
+	
+	<!-- 加载映射文件 -->
+	<mappers>
+		<mapper resource="mybaits/sqlmap/User.xml" />
+		<!-- <mapper resource="mapper/UserMapper.xml"/> -->
+		
+		<!-- 通过mapper接口加载mapper配置文件:
+			1.mapper文件必须和mapper放在同一个文件夹下面
+		 -->
+		 <!-- <mapper class="com.ls.mapper.UserMapper" /> -->
+		
+		<!-- 通过包路径扫描mapper -->
+		<package name="com.ls.mapper"/>
+		
+	</mappers>
+</configuration>
